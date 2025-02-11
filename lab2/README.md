@@ -1,4 +1,6 @@
-git clone https://github.com/AmidQazi/CSE3150/lab2.git
+git clone https://github.com/AmidQazi/CSE3150.git
+
+Change Directory into lab2
 
 Launch the project:
 
