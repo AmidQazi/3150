@@ -1,1 +1,1 @@
-
+Clone the repository for the CSE3150 lab, open your command prompt or terminal and run the command git clone. After cloning, navigate to the lab directory with cd CSE3150/Lab4. To compile the project, use the command g++ main.cpp linked_list.cpp and then execute it by running ./a. To run tests, compile with g++ test_linked_list.cpp linked_list.cpp and execute using ./a.
