@@ -4,7 +4,14 @@
 struct node {
     int data;
     struct node* next;
+
+    // Move constructor
+    node(node&& other) noexcept;
+
+    // Move assignment operator
+    node& operator=(node&& other) noexcept;
 };
+
 
 struct node * createLinkedList(int n);
 
