@@ -21,3 +21,27 @@ TEST_CASE("Test pointerJumping and getValue") {
     CHECK(getValue(head, 5, 5) == 5);
     CHECK(getValue(head, 4, 5) == 5);
 }
+
+TEST_CASE("Test move constructor") {
+    struct node* original = createLinkedList(5);
+    struct node* moved = new node(std::move(*original));
+    CHECK(moved->data == 1); // Assume node 1 is the start
+    CHECK(original->data == 0); // Original should be altered
+
+    // Clean up
+    delete original;
+    delete moved;
+}
+
+TEST_CASE("Test move assignment") {
+    struct node* original = createLinkedList(5);
+    struct node* moved = new node;
+    *moved = std::move(*original);
+    CHECK(moved->data == 1);
+    CHECK(original->data == 0); // Original should be altered
+
+    // Clean up
+    delete original;
+    delete moved;
+}
+
