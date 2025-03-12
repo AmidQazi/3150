@@ -58,3 +58,21 @@ void print(struct node * start, int total_elements) {
         linked_list = linked_list->next;
     }
 }
+
+// Move constructor
+node::node(node&& other) noexcept : data(other.data), next(other.next) {
+    other.next = nullptr;
+    other.data = 0;
+}
+
+// Move assignment operator
+node& node::operator=(node&& other) noexcept {
+    if (this != &other) {
+        data = other.data;
+        next = other.next;
+        other.data = 0;
+        other.next = nullptr;
+    }
+    return *this;
+}
+
